@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Le comptoir de Renard{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+        {# Police écriture #}
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="{{ asset('assets/icons/favicon.ico') }}">
+
+        {% block stylesheets %}
+        
+            <!-- Bootstrap -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />        
+           
+            <!-- Owl Carousel -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+            <!-- Accordion CSS -->
+            <link rel="stylesheet" type="text/css" href="https://unpkg.com/accordion-js@3.2.0/dist/accordion.min.css"/>
+
+            <!-- Font-Awesome -->
+            <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.css') }}">
+
+
+        {% endblock %}
+    
+    </head>
+    <body>
+
+        <!-- Include du Header -->
+        {% include "inc/_header.html.twig" %}
+        
+        {% block body %}    
+
+        {% endblock %}
+
+            <!-- Include du Footer -->
+            {% include "inc/_footer.html.twig" %}
+
+            <!-- Include du Backtotop -->
+            {% include "inc/_backtotop.html.twig" %}
+
+
+        <!-- Script JS -->
+
+
+        {% block javascripts %}
+
+            <!-- Bootstrap -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+            <!-- Jquery -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js" integrity="sha512-+/4Q+xH9jXbMNJzNt2eMrYv/Zs2rzr4Bu2thfvzlshZBvH1g+VGP55W8b6xfku0c0KknE7qlbBPhDPrHFbgK4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+            <!-- Owl Carousel -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script rel="javascript" src="{{ asset('assets/app_js/owl-carousel.js') }}"></script>
+            
+            <!-- Back To Top -->
+            <script rel="javascript" src="{{ asset('assets/app_js/backtotop.js') }}"></script>
+
+            <!-- Accoridon JS -->
+            <script type="text/javascript" src="https://unpkg.com/accordion-js@3.2.0/dist/accordion.min.js"></script>
+
+            <!-- Custom JS -->
+            <script rel="javascript" src="{{ asset('assets/js/custom.js') }}"></script>
+
+            <!-- Tabs -->
+            <script type="text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+            <script rel="javascript" src="{{ asset('assets/app_js/tabs.js') }}"></script>
+
+        {% endblock %}
+
+    </body>
+
+</html>
+
+
