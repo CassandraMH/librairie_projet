@@ -19,7 +19,7 @@ class Livre
     #[ORM\Column(type: 'string', length: 255)]
     private $description;
 
-    #[ORM\Column(type: 'string', length: 50)]
+    #[ORM\Column(type: 'string', length: 50,)]
     private $auteur;
 
     #[ORM\Column(type: 'integer')]
@@ -27,6 +27,10 @@ class Livre
 
     #[ORM\Column(type: 'string', length: 255)]
     private $image;
+
+    #[ORM\ManyToOne(targetEntity: Genrelitteraire::class, inversedBy: 'genre')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $genrelitteraire;
 
     public function getId(): ?int
     {
@@ -92,4 +96,17 @@ class Livre
 
         return $this;
     }
+
+    public function getGenrelitteraire(): ?Genrelitteraire
+    {
+        return $this->genrelitteraire;
+    }
+
+    public function setGenrelitteraire(?Genrelitteraire $genrelitteraire): self
+    {
+        $this->genrelitteraire = $genrelitteraire;
+
+        return $this;
+    }
+
 }

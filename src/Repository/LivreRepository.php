@@ -60,6 +60,51 @@ class LivreRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+    
+    
+    public function findAllWithoutOldComite()
+    {
+        return $this->createQueryBuilder('livre')
+            ->addSelect('livre')
+            ->leftJoin('livre.famille', 'f')
+            ->andWhere('fc.actif = 1')
+            ->leftJoin('fc.comite', 'c')
+            ->orderBy('f.nomChefFoyer', 'ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    // Pour la requête du tabs
+    public function findMyLivre($value)
+    {
+        return $this
+            ->createQueryBuilder('l')
+            ->leftJoin("l.tabs", "t")
+            ->andWhere('genrelitteraire.id in (:value)')
+            ->setParameter('value', $value)
+            ->getQuery()
+            ->getREsult();
+    }
+
+    // Find/search articles by title/content
+    public function findLivreByAuteur(string $query)
+    {
+        $qb = $this->createQueryBuilder('l');
+        $qb
+            ->where(
+                $qb->expr()->andX(
+                    $qb->expr()->orX(
+                        $qb->expr()->like('l.auteur', ':query'),
+                    ),
+                )
+            )
+            ->setParameter('query', '%' . $query . '%')
+        ;
+        return $qb
+            ->getQuery()
+            ->getResult();
+    }
 
     /*
     public function findOneBySomeField($value): ?Livre
