@@ -14,8 +14,6 @@
             <!-- CSS secondaire de la page -->
             <link rel="stylesheet" href="{{ asset('assets/css/owl-carousel.css') }}">
             
-            <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.css') }}">
-
             <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css') }}">
 
 {% endblock %}
@@ -26,7 +24,7 @@
 
     <div class="container-searchbar">
             <div class="text-center">
-                <div class="section-heading">
+                <div class="section">
                     <h6>Une recherche ?</h6>
                 </div>
             </div>
@@ -72,11 +70,11 @@
                         <div class="container-biblio">
                             <section class='tabs-content'>
                                 <article id='tabs-1'>
-                                    <div class="row">
+                                    <div class="row align-items-center">
                                         {% for livrepublic in livrepublics %}
-                                        <div class="col">
+                                        <div class="col-4">
                                             <div class="tab-item">
-                                                <img src={{ livrepublic.image }} alt="">
+                                                <img src={{ livrepublic.image }} width="150px" height="220px" alt="">
                                                     <h4>{{ livrepublic.titre }}</h4>
                                                     <h5>{{ livrepublic.auteur }}</h5>
                                                     <p>{{ livrepublic.description }}</p>
@@ -91,221 +89,20 @@
                         <!-- PARTIE : FANTASTIQUE -->
 
                                 <article id='tabs-2'>
-                                    <div class="row">
-                                        <div class="col">
+                                    <div class="row align-items-center">
+                                        {% for livrepublic in livrepublics %}
+                                        <div class="col-4">
                                             <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-01.jpg" alt="">
-                                                    <h4>La passe-miroir - Tome 3</h4>
-                                                    <h5>Christelle Dabos</h5>
-                                                    <p>Deux ans et sept mois qu'Ophélie se morfond sur son arche d'Anima.</p>
+                                                <img src={{ livrepublic.image }} alt="">
+                                                    <h4>{{ livrepublic.titre }}</h4>
+                                                    <h5>{{ livrepublic.auteur }}</h5>
+                                                    <p>{{ livrepublic.description }}</p>
                                                         <div class="price">
-                                                            <h6>🧙 : 19€90</h6>
+                                                            <h6>🧙 : {{ livrepublic.prix }} €</h6>
                                                         </div>
                                             </div>
                                         </div>
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-02.jpg" alt="">
-                                                    <h4>Miss Peregrine et les enfants particuliers</h4>
-                                                    <h5>Ransom Riggs</h5>
-                                                    <p>Jacob Portman, écoute depuis son enfance les récits de son grand-père.</p>
-                                                        <div class="price">
-                                                            <h6>🧙 : 15€90</h6>
-                                                        </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-03.jpg" alt="">
-                                                    <h4>Gardiens des Cités perdues</h4>
-                                                    <h5>Shannon Messenger</h5>
-                                                    <p>Vous rêvez de visiter Atlantis ou la mythique cité de Shangri-La ?</p>
-                                                        <div class="price">
-                                                            <h6>🧙 : 15€00</h6>
-                                                        </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                                        
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-04.jpg" alt="">
-                                                    <h4>La maison de la nuit - Tome 2</h4>
-                                                    <h5>Kristin Cast</h5>
-                                                    <p>Zoey a trouvé sa place dans la Maison de la Nuit.</p>
-                                                        <div class="price">
-                                                            <h6>🧙 : 15€20</h6>
-                                                        </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-05.jpg" alt="">
-                                                    <h4>Sixtine - Tome 1</h4>
-                                                    <h5>Caroline Vermalle</h5>
-                                                    <p>Elle a épousé l'homme de ses rêves comme dans les contes de fées.</p>
-                                                        <div class="price">
-                                                            <h6>🧙 : 19€90</h6>
-                                                        </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-06.jpg" alt="">
-                                                <h4>Frankestein</h4>
-                                                <h5>Mary Shelley</h5>
-                                                <p>Cette édition est enrichie d'illustrations réalisées par Armel Gaulme.</p>
-                                                    <div class="price">
-                                                        <h6>🧙 : 19€90</h6>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-07.jpeg" alt="">
-                                                    <h4>Rouge Rubis - Tome 3</h4>
-                                                    <h5>Kerstein Gier</h5>
-                                                    <p>Gwendolyn a-t-elle jamais été une lycéenne comme les autres ?</p>
-                                                        <div class="price">
-                                                            <h6>🧙 : 14€50</h6>
-                                                        </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-08.jpg" alt="">
-                                                    <h4>La Tour Sombre - Tome 1</h4>
-                                                    <h5>Stephen King</h5>
-                                                    <p>Roland de Gilead, dernier justicier et aventurier d'un monde.</p>
-                                                        <div class="price">
-                                                            <h6>🧙 : 8€00</h6>
-                                                        </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-09.jpg" alt="">
-                                                    <h4>The Mortal Instrument - Tome 1</h4>
-                                                    <h5>Cassandra Clare</h5>
-                                                    <p>Elle vient de voir le beau garçon de la soirée commettre un meurtre.</p>
-                                                        <div class="price">
-                                                            <h6>🧙 : 18€15</h6>
-                                                        </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                                        
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-10.jpg" alt="">
-                                                    <h4>La roue du Temps - Tome 1.2</h4>
-                                                    <h5>Robert Jordan</h5>
-                                                    <p>La Roue du Temps tourne et les Âges naissent et meurent.</p>
-                                                        <div class="price">
-                                                            <h6>🧙 : 7€90</h6>
-                                                        </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-11.jpg" alt="">
-                                                    <h4>Après</h4>
-                                                    <h5>Stephen King</h5>
-                                                    <p>amie n'est pas un enfant comme les autres.</p>
-                                                        <div class="price">
-                                                            <h6>🧙 : 20€90</h6>
-                                                        </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-12.jpg" alt="">
-                                                <h4>Marquer les ombres - Tome 1</h4>
-                                                <h5>Veronica Roth</h5>
-                                                <p>Ennemi à la naissance, alliés par choix.</p>
-                                                    <div class="price">
-                                                        <h6>🧙 : 8€30</h6>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-13.jpg" alt="">
-                                                    <h4>L'école du bien et du mal - Tome 1</h4>
-                                                    <h5>Soman Chainani</h5>
-                                                    <p>Prenez des gentils, des méchants, un ou deux princes charmants.</p>
-                                                        <div class="price">
-                                                            <h6>🧙 : 7€95</h6>
-                                                        </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-14.jpg" alt="">
-                                                    <h4>Chevaliers Emeraude - Tome 1</h4>
-                                                    <h5>Anne Robillard</h5>
-                                                    <p>L'Empereur Noir, Amecareth, a levé ses armées pour d'Enkidiev</p>
-                                                        <div class="price">
-                                                            <h6>🧙 : 7€60</h6>
-                                                        </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-15.jpg" alt="">
-                                                    <h4>La Prophétie des abeilles</h4>
-                                                    <h5>Bernard Werber</h5>
-                                                    <p>Ce secret est annoncé dans une prophétie écrite à Jérusalem.</p>
-                                                        <div class="price">
-                                                            <h6>🧙 : 22€90</h6>
-                                                        </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                                        
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-16.jpg" alt="">
-                                                    <h4>L'héritière des Raeven - Tome 1</h4>
-                                                    <h5>Méropée Malo</h5>
-                                                    <p>Assia, dix-neuf ans et bac en poche, rentre chez elle.</p>
-                                                        <div class="price">
-                                                            <h6>🧙 : 16€90</h6>
-                                                        </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-17.jpg" alt="">
-                                                    <h4>L'Ickabog</h4>
-                                                    <h5>J.K. Rowling</h5>
-                                                    <p>Des boules de feu étincelantes à la place des yeux.</p>
-                                                        <div class="price">
-                                                            <h6>🧙 : 20€00</h6>
-                                                        </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="tab-item">
-                                                <img src="/assets/images/fantastique/tab-item-18.jpg" alt="">
-                                                <h4>Le Seuil - Tome 2</h4>
-                                                <h5>J.L Sivert</h5>
-                                                <p>Pour protéger ceux qu’il aime, Milo est devenu un oni</p>
-                                                    <div class="price">
-                                                        <h6>🧙 : 15€99</h6>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                       {% endfor %}
                         </article>
 
                 </section>

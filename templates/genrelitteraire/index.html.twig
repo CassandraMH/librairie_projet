@@ -1,4 +1,4 @@
-<title>{% block title %}Les auteurs{% endblock %}</title>
+<title>{% block title %}Les genres littéraires{% endblock %}</title>
 
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="{{ asset('assets/icons/favicon.ico') }}">
@@ -45,18 +45,18 @@
               <div class="row">
                 <div class="col-lg-6">
                   <div class="d-flex flex-column h-100">
-                    <h5 class="mb-1 pt-2 text-bold">Création d'un auteur</h5>
+                    <h5 class="mb-1 pt-2 text-bold">Création d'un genre littéraire</h5>
                     <i class="font-weight-bolder">Libraire</i>
-                    <br><p class="mb-5">Pour crée un auteur, c'est par ici que cela ce passe !</p>
+                    <br><p class="mb-5">Pour crée la mise en bibliothèque d'un genre littéraire et le voir apparaître sur le site de la librairie, c'est par ici que cela ce passe !</p>
                     <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
-                      <a href="{{ path('app_auteur_new') }}">Crée un auteur<i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
+                      <a href="{{ path('app_genrelitteraire_new') }}">Crée un genre littéraire<i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                       </a>
                     </a>
                   </div>
                 </div>
                 <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
                   <div class="bg-gradient-primary border-radius-lg h-100">
-                    <img src="/assets/images/auteur.jpg" class="h-100 w-100" alt="">
+                    <img src="/assets/images/genre-litteraire.jpg" class="h-100 w-100" alt="">
                   </div>
                 </div>
               </div>
@@ -68,28 +68,28 @@
         <div class="col-md-12 mt-4">
           <div class="card">
             <div class="card-header pb-0 px-3">
-              <h6 class="mb-0">Les auteurs enregistrées dans la bibliothèque</h6>
+              <h6 class="mb-0">Les genres littéraires enregistrées dans la bibliothèque</h6>
               <br>
             </div>
             <div class="card-body pt-4 p-3">
               <ul class="list-group">
-                {% for auteur in auteurs %}
+                {% for genrelitteraire in genrelitteraires %}
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
-                    <h6 class="mb-3 text-sm">Auteur n' : {{ auteur.id }}</h6>
-                    <h6 class="mb-3 text-sm">Nom de l'auteur :<span class="text-dark font-weight-bold ms-sm-2">{{ auteur.nom }}</h6>
-                    <h6 class="mb-3 text-xs">Prénom de l'auteur : <span class="text-dark font-weight-bold ms-sm-2">{{ auteur.prenom }}</span></h6>
+                    <h6 class="mb-3 text-sm">Genre littéraire n° : {{ genrelitteraire.id }}</h6>
+                    <h6 class="mb-3 text-sm">Nom du genre :<span class="text-dark font-weight-bold ms-sm-2"> {{ genrelitteraire.name }}</h6>
                   </div>
                   <div class="ms-auto text-end">
-                    <a class="btn btn-link text-dark text-gradient px-3 mb-0" href="javascript:;"><i class="fa-solid fa-image me-2"></i><a href="{{ path('app_auteur_show', {'id': auteur.id}) }}">Résultat</a></a>
-                    <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i><a href="{{ path('app_auteur_edit', {'id': auteur.id}) }}">Editer</a></a>
-                    <a class="btn btn-link text-danger px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt text-dark me-2" aria-hidden="true"></i>{{ include('auteur/_delete_form.html.twig') }}</a>
+                    <a class="btn btn-link text-dark text-gradient px-3 mb-0" href="javascript:;"><i class="fa-solid fa-image me-2"></i><a href="{{ path('app_genrelitteraire_show', {'id': genrelitteraire.id}) }}">Résultat</a></a>
+                    <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i><a href="{{ path('app_genrelitteraire_edit', {'id': genrelitteraire.id}) }}">Editer</a></a>
+                    <a class="btn btn-link text-danger px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt text-dark me-2" aria-hidden="true"></i>{{ include('genrelitteraire/_delete_form.html.twig') }}</a>
                   </div>
                   {% endfor %}
                 </li>
               </ul>
             </div>
           </div>
-        </div>
+        </div>      
 
 {% endblock %}
+

@@ -45,9 +45,9 @@
               <div class="row">
                 <div class="col-lg-6">
                   <div class="d-flex flex-column h-100">
-                    <p class="mb-1 pt-2 text-bold">Création d'un ouvrage</p>
-                    <h5 class="font-weight-bolder">Libraire</h5>
-                    <p class="mb-5">Pour crée la mise en bibliothèque d'un ouvrage et sur le site, c'est par ici que cela ce passe !</p>
+                    <h5 class="mb-1 pt-2 text-bold">Création d'un ouvrage</h5>
+                    <i class="font-weight-bolder">Libraire</i>
+                    <br><p class="mb-5">Pour crée la mise en bibliothèque d'un ouvrage et le voir apparaître sur le site de la librairie, c'est par ici que cela ce passe !</p>
                     <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
                       <a href="{{ path('app_livre_new') }}">Crée une publication<i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                       </a>
@@ -69,23 +69,28 @@
           <div class="card">
             <div class="card-header pb-0 px-3">
               <h6 class="mb-0">Les livres enregistrées dans la bibliothèque</h6>
+              <br>
             </div>
             <div class="card-body pt-4 p-3">
               <ul class="list-group">
                 {% for livre in livres %}
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
-                    <h6 class="mb-3 text-sm">Livre n' : {{ livre.id }}</h6>
+                    <h6 class="mb-3 text-sm">Livre n° : {{ livre.id }}</h6>
+                    <h6 class="mb-3 text-sm">Genre :<span class="text-dark font-weight-bold ms-sm-2"> {{ livre.genrelitteraire }}</h6>
                     <h6 class="mb-3 text-sm">Titre du livre :<span class="text-dark font-weight-bold ms-sm-2"> {{ livre.titre }}</h6>
                     <h6 class="mb-3 text-xs">Auteur : <span class="text-dark font-weight-bold ms-sm-2">{{ livre.auteur }}</span></h6>
                     <h6 class="mb-3 text-xs">Description : <span class="text-dark font-weight-bold ms-sm-2">{{ livre.description }}</span></h6>
                     <h6 class="mb-3 text-xs">Prix du livre: <span class="text-dark font-weight-bold ms-sm-2">{{ livre.prix }}€</span></h6>
-                    <span class="text-xs">Couverture : <img src="{{ livre.image }}" width="150px" height="500px"></span>
+                  </div>
+                  <div class="ms-auto">
+                    <span class="text-xs">Couverture : 
+                    <br> <br><img src="{{ livre.image }}" width="125px" height="200px"></span>
                   </div>
                   <div class="ms-auto text-end">
                     <a class="btn btn-link text-dark text-gradient px-3 mb-0" href="javascript:;"><i class="fa-solid fa-image me-2"></i><a href="{{ path('app_livre_show', {'id': livre.id}) }}">Résultat</a></a>
                     <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i><a href="{{ path('app_livre_edit', {'id': livre.id}) }}">Editer</a></a>
-                    <a class="btn btn-link text-danger px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt text-dark me-2" aria-hidden="true"></i><a href="{{ path('app_livre_delete', {'id': livre.id}) }}">Supprimer</a></a>
+                    <a class="btn btn-link text-danger px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt text-dark me-2" aria-hidden="true"></i>{{ include('livre/_delete_form.html.twig') }}</a>
                   </div>
                   {% endfor %}
                 </li>

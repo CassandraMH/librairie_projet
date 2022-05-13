@@ -1,4 +1,4 @@
-<title>{% block title %}Présentation de l'auteur{% endblock %}</title>
+<title>{% block title %}Présentation d'un genre littéraire{% endblock %}</title>
 
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="{{ asset('assets/icons/favicon.ico') }}">
@@ -47,11 +47,10 @@
               <div class="row">
                 <div class="col-lg-6">
                   <div class="d-flex flex-column h-100">
-                    <p class="mb-1 pt-2 text-bold">Numéros de l'auteur : n'{{ auteur.id }}</p>
-                    <br><h4 class="font-weight-bolder">Nom : {{ auteur.nom }}</h4>
-                    <h5 class="font-weight-bolder">Prénom : {{ auteur.prenom }}</h5>
+                    <p class="mb-1 pt-2 text-bold">Numéros du genre littéraire : n'{{ genrelitteraire.id }}</p>
+                    <br><h4 class="font-weight-bolder">Genre littéraire : {{ genrelitteraire.name }}</h4>
                       <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
-                      <br><a href="{{ path('app_auteur_index') }}">Retour à la page principale <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
+                      <br><a href="{{ path('app_genrelitteraire_index') }}">Retour à la page principale <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                       </a>
                     </a>
                   </div>
@@ -60,10 +59,10 @@
               <br>
               <div class="row justify-content-around">
                 <div class="col-4">
-                    <button type="button" class="btn btn-light"><a href="{{ path('app_auteur_edit', {'id': auteur.id}) }}">Editer</a></button>
+                    <button type="button" class="btn btn-light"><a href="{{ path('app_genrelitteraire_edit', {'id': genrelitteraire.id}) }}">Editer</a></button>
                 </div>
                 <div class="col-4">
-                    {{ include('auteur/_delete_form.html.twig') }}
+                    {{ include('genrelitteraire/_delete_form.html.twig') }}
                 </div>
               </div>
             </div>

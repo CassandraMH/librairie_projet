@@ -39,37 +39,61 @@
       </div>
     </nav>
     <!-- End Navbar -->
-
-    <div class="row mt-4">
-        <div class="col-lg-12 mb-lg-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="d-flex flex-column h-100">
-                    <p class="mb-1 pt-2 text-bold">Numéros de la publication : n'{{ livre.id }}</p>
-                    <h3 class="font-weight-bolder">{{ livre.titre }}</h3>
-                    <h4 class="font-weight-bolder">{{ livre.auteur }}</h4>
-                    <p class="mb-5">{{ livre.description }}</p>
-                    <h6 class="font-weight-bolder">{{ livre.prix }}€</h6>
-                    <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
-                      <a href="{{ path('app_livre_index') }}">Retour à la page principale <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
-                      </a>
-                    </a>
-                  </div>
+      <div class="container">
+        <div class="row row-breadcrumb breadcrumb-fiche">
+            <div class="col-sm-8 col-lg-10">
+                <div class="hidden-xs">                                            
+                    <div class="fiche-breadcrumb-title">Présentation de l'ouvrage n° {{ livre.id }}</div>
+                    <br>
                 </div>
-                <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
-                  <div class="bg-gradient-primary border-radius-lg h-100">
-                    <img src="#" class="h-100 w-100" alt="">{{ livre.image }}
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-
-        <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i><a href="{{ path('app_livre_edit', {'id': livre.id}) }}">Editer</a></a>
-
-    {{ include('livre/_delete_form.html.twig') }}
+            <div class="row" itemscope="" itemtype="http://schema.org/Book">
+                <div class="col-sm-4 livre-container">
+                    <div class="couverture" data-ean="9782246827184" data-id="0-7019262">
+                        <picture>
+                            <img src="{{ livre.image }}" width="325px" height="500px"  class="couverture" itemprop="image" alt="">
+                        </picture>
+                    </div>
+                    <br>
+            <div class="row justify-content-around">
+                <div class="col-4">
+                    <button type="button" class="btn btn-light"><a href="{{ path('app_livre_edit', {'id': livre.id}) }}">Editer</a></button>
+                </div>
+                <div class="col-4">
+                    {{ include('livre/_delete_form.html.twig') }}
+                </div>
+            </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="livre-container">
+                    <h1 class="text-mulit-light text-black" itemprop="name">{{ livre.titre }}</h1>
+                        <h2 class="text-mulit-bold text-black">de
+                            <span itemprop="author">{{ livre.auteur }}</span>                                      
+                        </h2>
+                        <h5> {{ livre.genrelitteraire }} </h5>
+                        <p class=" text-mulit-light mb-5">
+                                <p class="public text-gray">
+                                    Prix de l'ouvrage : {{ livre.prix }}€
+                                </p>
+                                <p class="public text-gray">
+                                    Tout public
+                                </p>
+                                    
+                    <div class="row mb-5 mt-30">
+                        <div class="col-sm-6 col-lg-4 xs-mb-5">
+                            <a href="#" rel="nofollow" class="btn-login-review text-mulit-light text-orange"><i class="fa fa-star" aria-hidden="true"></i> Donner votre avis sur ce livre</a>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 xs-mb-5">
+                            <span class="text-mulit-light text-orange"><a href="#" rel="nofollow" class="btn-login-wish-list text-orange"><i class="fa fa-plus" aria-hidden="true"></i> Ajouter à votre liste d'envie</a></span>
+                        </div>
+                    </div>
+                    <hr class="mt-0">
+                        <div class="row mb-20">
+                            <div id="4couv" class="col-xs-12"><h4 class="text-mulit-light text-orange">Quatrième de couverture</h4><p>
+                                <b>{{ livre.titre }}</b>
+                                </p><p>{{ livre.description }}</p></div>  
+                            </div>
+                        </div>
+                    </div>
 
 {% endblock %}

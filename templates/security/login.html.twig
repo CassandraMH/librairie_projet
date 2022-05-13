@@ -19,7 +19,7 @@
         <nav class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
           <div class="container-fluid ps-2 pe-0">
             <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3" href="{{ path('app_home')}}">
-                Le comptoir de renard
+               🕮 Le comptoir de renard
             </a>
             <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon mt-2">
@@ -61,7 +61,7 @@
     </div>
   </div>
   <main class="main-content  mt-0">
-    <div class="page-header align-items-start min-vh-100" style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');">
+  <div class="page-header align-items-start min-vh-100" style="background-image: url('/assets/images/background-login.jpg');">
       <span class="mask bg-gradient-dark opacity-6"></span>
       <div class="container my-auto">
         <div class="row">
@@ -89,67 +89,31 @@
                   </div>
                 </div>
               </div>
-              <!--<div class="card-body">
-                <form role="form" method="post" class="text-start">
 
+        <div class="card-body">
+          <form method="post">
+              {% if error %}
+                  <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+              {% endif %}
 
-                    {% if app.user %}
-                        <div class="mb-3">
-                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-                        </div>
-                    {% endif %}
-                  <div class="input-group input-group-outline my-3">
-                    {{ last_username }}
-                    <input type="email" class="form-control" required>
+              {% if app.user %}
+                  <div class="mb-3">
+                      You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
                   </div>
-                  <div class="input-group input-group-outline mb-3">
-                    <input type="password" class="form-control" required>
-                    <input type="hidden" name="_csrf_token"
-                        value="{{ csrf_token('authenticate') }}"
-                    >
-                  </div>
-                  <div class="text-center">
-                    <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Validez</button>
-                  </div>
-                  <p class="mt-4 text-sm text-center">
-                    Pas encore de compte ?
-                    <a href="{{ path('app_register')}}" class="text-primary text-gradient font-weight-bold">Inscrit toi</a>
-                  </p>
-                </form>
+              {% endif %}
+
+              <label for="inputEmail">Email</label>
+              <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+              <label for="inputPassword">Mot de passe</label>
+              <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+              <input type="hidden" name="_csrf_token"
+                  value="{{ csrf_token('authenticate') }}"
+              >
+              <div class="text-center">
+                <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Validez</button>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>-->
+          </form>
+      </div>
 
-
-
-
-
-    <form method="post">
-        {% if error %}
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
-
-        {% if app.user %}
-            <div class="mb-3">
-                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-            </div>
-        {% endif %}
-
-        <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
-        <label for="inputEmail">Email</label>
-        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-        <label for="inputPassword">Mot de passe</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-        <input type="hidden" name="_csrf_token"
-            value="{{ csrf_token('authenticate') }}"
-        >
-
-        <button class="btn btn-lg btn-primary" type="submit">
-            Sign in
-        </button>
-    </form>
-</div>
 {% endblock %}
