@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\LivreRepository;
+use App\Entity\Pagesearch;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\LivreRepository;
 
 #[ORM\Entity(repositoryClass: LivreRepository::class)]
 class Livre
@@ -19,9 +20,6 @@ class Livre
     #[ORM\Column(type: 'string', length: 255)]
     private $description;
 
-    #[ORM\Column(type: 'string', length: 50,)]
-    private $auteur;
-
     #[ORM\Column(type: 'integer')]
     private $prix;
 
@@ -31,6 +29,11 @@ class Livre
     #[ORM\ManyToOne(targetEntity: Genrelitteraire::class, inversedBy: 'genre')]
     #[ORM\JoinColumn(nullable: false)]
     private $genrelitteraire;
+
+    #[ORM\ManyToOne(targetEntity: Auteur::class, inversedBy: 'auteurliaison')]
+    #[ORM\JoinColumn(nullable: true)]
+    private $auteur;
+
 
     public function getId(): ?int
     {
@@ -57,18 +60,6 @@ class Livre
     public function setDescription(string $description): self
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getAuteur(): ?string
-    {
-        return $this->auteur;
-    }
-
-    public function setAuteur(string $auteur): self
-    {
-        $this->auteur = $auteur;
 
         return $this;
     }
@@ -109,4 +100,15 @@ class Livre
         return $this;
     }
 
+    public function getAuteur(): ?Auteur
+    {
+        return $this->auteur;
+    }
+
+    public function setAuteur(?Auteur $auteur): self
+    {
+        $this->auteur = $auteur;
+
+        return $this;
+    }
 }

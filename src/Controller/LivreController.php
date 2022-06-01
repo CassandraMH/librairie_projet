@@ -4,7 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Livre;
 use App\Form\LivreType;
+use App\Entity\Pagesearch;
+use App\Form\PagesearchType;
 use App\Repository\LivreRepository;
+use App\Repository\PagesearchRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -77,4 +80,5 @@ class LivreController extends AbstractController
 
         return $this->redirectToRoute('app_livre_index', [], Response::HTTP_SEE_OTHER);
     }
+
 }

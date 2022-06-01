@@ -2,8 +2,9 @@
 
 namespace App\Form;
 
-use App\Entity\Genrelitteraire;
 use App\Entity\Livre;
+use App\Entity\Auteur;
+use App\Entity\Genrelitteraire;
 use Doctrine\ORM\Mapping\Entity;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,7 +18,10 @@ class LivreType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('auteur')
+            ->add('auteur', EntityType::class, [
+                'placeholder' => 'Merci de choisir un auteur',
+                'class' => Auteur::class,
+            ])
             ->add('description')
             ->add('genrelitteraire', EntityType::class, [
                     'placeholder' => 'Merci de choisir un genre littéraire',

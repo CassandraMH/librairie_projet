@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AuteurRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AuteurRepository::class)]
@@ -13,38 +15,31 @@ class Auteur
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $nom;
-
     #[ORM\Column(type: 'string', length: 50)]
-    private $prenom;
+    private $nometprenom;
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getNometprenom(): ?string
     {
-        return $this->nom;
+        return $this->nometprenom;
     }
 
-    public function setNom(string $nom): self
+    public function setNometprenom(string $nometprenom): self
     {
-        $this->nom = $nom;
+        $this->nometprenom = $nometprenom;
 
         return $this;
     }
 
-    public function getPrenom(): ?string
+    public function __toString()
     {
-        return $this->prenom;
+        return $this->nometprenom;
     }
 
-    public function setPrenom(string $prenom): self
-    {
-        $this->prenom = $prenom;
 
-        return $this;
-    }
 }

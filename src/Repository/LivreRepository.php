@@ -2,11 +2,13 @@
 
 namespace App\Repository;
 
+use App\Entity\Genrelitteraire;
 use App\Entity\Livre;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\OptimisticLockException;
+use App\Entity\Pagesearch;
 use Doctrine\ORM\ORMException;
+use Doctrine\ORM\OptimisticLockException;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @extends ServiceEntityRepository<Livre>
@@ -51,70 +53,68 @@ class LivreRepository extends ServiceEntityRepository
     //  * @return Livre[] Returns an array of Livre objects
     //  */
     
-    public function findByExampleField()
+    public function findByLivreFantasy($id = 1)
     {
         return $this->createQueryBuilder('l')
+            ->andWhere('l.genrelitteraire = :val')
+            ->setParameter('val', $id)
             ->orderBy('l.id', 'ASC')
             ->setMaxResults(20)
             ->getQuery()
             ->getResult()
         ;
     }
-    
-    
-    public function findAllWithoutOldComite()
-    {
-        return $this->createQueryBuilder('livre')
-            ->addSelect('livre')
-            ->leftJoin('livre.famille', 'f')
-            ->andWhere('fc.actif = 1')
-            ->leftJoin('fc.comite', 'c')
-            ->orderBy('f.nomChefFoyer', 'ASC')
-            ->getQuery()
-            ->getResult()
-            ;
-    }
 
-    // Pour la requête du tabs
-    public function findMyLivre($value)
-    {
-        return $this
-            ->createQueryBuilder('l')
-            ->leftJoin("l.tabs", "t")
-            ->andWhere('genrelitteraire.id in (:value)')
-            ->setParameter('value', $value)
-            ->getQuery()
-            ->getREsult();
-    }
-
-    // Find/search articles by title/content
-    public function findLivreByAuteur(string $query)
-    {
-        $qb = $this->createQueryBuilder('l');
-        $qb
-            ->where(
-                $qb->expr()->andX(
-                    $qb->expr()->orX(
-                        $qb->expr()->like('l.auteur', ':query'),
-                    ),
-                )
-            )
-            ->setParameter('query', '%' . $query . '%')
-        ;
-        return $qb
-            ->getQuery()
-            ->getResult();
-    }
-
-    /*
-    public function findOneBySomeField($value): ?Livre
+    public function findByLivreFantastique($id = 2)
     {
         return $this->createQueryBuilder('l')
-            ->andWhere('l.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('l.genrelitteraire = :val')
+            ->setParameter('val', $id)
+            ->orderBy('l.id', 'ASC')
+            ->setMaxResults(20)
             ->getQuery()
-            ->getOneOrNullResult()
+            ->getResult()
         ;
     }
-    */
+
+    public function findByLivreCinema($id = 3)
+    {
+        return $this->createQueryBuilder('l')
+            ->andWhere('l.genrelitteraire = :val')
+            ->setParameter('val', $id)
+            ->orderBy('l.id', 'ASC')
+            ->setMaxResults(20)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function findByLivreSF($id = 4)
+    {
+        return $this->createQueryBuilder('l')
+            ->andWhere('l.genrelitteraire = :val')
+            ->setParameter('val', $id)
+            ->orderBy('l.id', 'ASC')
+            ->setMaxResults(20)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function findBySearch(Pagesearch $pagesearch): array
+    {
+        return $this->createQueryBuilder('l')
+            ->select('l', 'a')
+            ->leftjoin('a.id', 'l');
+
+            if (!empty($pagesearch->l)) {
+                $query = $query
+                ->andWhere('l.auteur LIKE :auteur')
+            ->setParameter('auteur', '%'.$pagesearch.'%');
+
+            }
+            
+            return $query->getQuery()->getResult();
+
+    }
 }
