@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Le comptoir de Renard
+{% endblock %}
+
+{% block stylesheets %} 
+
+        {{ parent() }}       
+        
+            <!-- Principale CSS de la page -->
+            <link rel="stylesheet" href="{{ asset('assets/css/pagefantasy.css') }}">
+
+            <!-- CSS secondaire de la page -->
+            <link rel="stylesheet" href="{{ asset('assets/css/owl-carousel.css') }}">
+            
+            <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css') }}">
+
+{% endblock %}
+
+{% block body %} 
+
+    <!-- ***** Barre de recherche Starts ***** -->
+
+    <div class="container-searchbar">
+            <div class="text-center">
+                <div class="section">
+                    <h6>Une recherche ?</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            {% include "search/index.html.twig" %}
+        </div> 
+    </div>
+
+    <!-- ***** End Barre de recherche ***** -->
+
+    <!-- ***** Menu Area Starts ***** -->
+    <section class="section" id="coupcoeur">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4 text-center">
+                    <div class="section-heading">
+                        <h6>Nos nouveautés du mois de Juin</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" id="tabs">
+                        <div class="col-lg-12">
+                            <div class="heading-tabs">
+                                <div class="row">
+                                    <div class="col-lg-6 offset-lg-3">
+                                        <ul>
+                                          <li><a href='#tabs-1'><img src="/assets/images/science-fiction/tab-icon-01.png" alt="">Science-fiction</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <!-- PARTIE : FANTASY -->
+
+                        <div class="container-biblio">
+                            <section class='tabs-content'>
+                                <article id='tabs-1'>
+                                    <div class="row align-items-center">
+                                        {% for livresf in livresfs %}
+                                        <div class="col-4">
+                                            <div class="tab-item">
+                                                <img src={{ livresf.image }} width="150px" height="220px" alt="">
+                                                    <h4>{{ livresf.titre }}</h4>
+                                                    <h5>{{ livresf.auteur }}</h5>
+                                                    <p>{{ livresf.description }}</p>
+                                                        <div class="price">
+                                                            <h6> 🪐 : {{ livresf.prix }}€00 </h6>
+                                                        </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                        </article>
+                </section>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+

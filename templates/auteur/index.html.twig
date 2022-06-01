@@ -77,8 +77,7 @@
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
                     <h6 class="mb-3 text-sm">Auteur n' : {{ auteur.id }}</h6>
-                    <h6 class="mb-3 text-sm">Nom de l'auteur :<span class="text-dark font-weight-bold ms-sm-2">{{ auteur.nom }}</h6>
-                    <h6 class="mb-3 text-xs">Prénom de l'auteur : <span class="text-dark font-weight-bold ms-sm-2">{{ auteur.prenom }}</span></h6>
+                    <h6 class="mb-3 text-sm">Prénom et Nom de l'auteur :<span class="text-dark font-weight-bold ms-sm-2">{{ auteur.nometprenom }}</h6>
                   </div>
                   <div class="ms-auto text-end">
                     <a class="btn btn-link text-dark text-gradient px-3 mb-0" href="javascript:;"><i class="fa-solid fa-image me-2"></i><a href="{{ path('app_auteur_show', {'id': auteur.id}) }}">Résultat</a></a>

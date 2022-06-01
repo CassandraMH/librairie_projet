@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Le comptoir de Renard
+{% endblock %}
+
+{% block stylesheets %} 
+
+        {{ parent() }}       
+        
+            <!-- Principale CSS de la page -->
+            <link rel="stylesheet" href="{{ asset('assets/css/pagefantasy.css') }}">
+
+            <!-- CSS secondaire de la page -->
+            <link rel="stylesheet" href="{{ asset('assets/css/owl-carousel.css') }}">
+            
+            <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css') }}">
+
+{% endblock %}
+
+{% block body %} 
+
+    <!-- ***** Barre de recherche Starts ***** -->
+
+    <div class="container-searchbar">
+            <div class="text-center">
+                <div class="section">
+                    <h6>Une recherche ?</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="search"> <input class="search_input" type="text" name="" placeholder="Recherche..."> <a href="#" class="search_icon"><i class="fa fa-search"></i></a> </div>
+        </div>
+    </div>
+
+    <!-- ***** End Barre de recherche ***** -->
+
+    <!-- ***** Menu Area Starts ***** -->
+    <section class="section" id="coupcoeur">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4 text-center">
+                    <div class="section-heading">
+                        <h6>Nos nouveautés du mois de Juin</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" id="tabs">
+                        <div class="col-lg-12">
+                            <div class="heading-tabs">
+                                <div class="row">
+                                    <div class="col-lg-6 offset-lg-3">
+                                        <ul>
+                                          <li><a href='#tabs-2'><img src="/assets/images/fantastique/tab-icon-02.png" alt="">Fantastique</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <!-- PARTIE : FANTASY -->
+
+                        <div class="container-biblio">
+                            <section class='tabs-content'>
+                                <article id='tabs-1'>
+                                    <div class="row align-items-center">
+                                        {% for livrefantastique in livrefantastiques %}
+                                        <div class="col-4">
+                                            <div class="tab-item">
+                                                <img src={{ livrefantastique.image }} width="150px" height="220px" alt="">
+                                                    <h4>{{ livrefantastique.titre }}</h4>
+                                                    <h5>{{ livrefantastique.auteur }}</h5>
+                                                    <p>{{ livrefantastique.description }}</p>
+                                                        <div class="price">
+                                                            <h6>🧙 : {{ livrefantastique.prix }}€00</h6>
+                                                        </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                        </article>
+                </section>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+

@@ -1,20 +1,9 @@
-{% if app.request.method == 'POST' %}
-    <div>
-        {% if auteurs | length == 0 %}
-            <h4>Aucun résulat pour votre recherche.</h4>
-           {% else %}
-               <h3 class="mt-3">Vos résulats de recherche :</h3>
-               {% for auteur in auteurs %}
-                   <div class="mt-3 p-3 bg-light border rounded">
-                       <a href="{{ path('livre_show', {'slug': livre.slug}) }}">
-                              <h6 class="text-dark"><i class="bi bi-arrow-down-right-square-fill text-primary"></i> {{ livre.auteur }}</h6>
-                       </a>
-                   </div>
-              {% endfor %}
-          {% endif %}
-     </div>
-{% endif %}
 
-<!--{{ render(controller(
-        'App\\Controller\\PageController::searchBar'
- )) }}
+<div class="search">
+
+
+			{{ render_esi(controller('App\\Controller\\PageController::recherche')) }}
+			
+
+</div>
+
