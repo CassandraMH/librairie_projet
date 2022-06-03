@@ -101,20 +101,4 @@ class LivreRepository extends ServiceEntityRepository
         ;
     }
 
-    public function findBySearch(Pagesearch $pagesearch): array
-    {
-        return $this->createQueryBuilder('l')
-            ->select('l', 'a')
-            ->leftjoin('a.id', 'l');
-
-            if (!empty($pagesearch->l)) {
-                $query = $query
-                ->andWhere('l.auteur LIKE :auteur')
-            ->setParameter('auteur', '%'.$pagesearch.'%');
-
-            }
-            
-            return $query->getQuery()->getResult();
-
-    }
 }

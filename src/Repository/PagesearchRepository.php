@@ -39,7 +39,18 @@ class PagesearchRepository extends ServiceEntityRepository
         }
     }
 
-    
+    public function findBySearch(Pagesearch $pagesearch): array
+    {
+        $qb = $this->createQueryBuilder('l');
+
+            if (!empty($pagesearch['auteur'])) {
+                $qb->andWhere('l.auteur LIKE :auteur');
+                $qb->setParameter('auteur', '%'.$pagesearch['auteur'].'%');
+            }
+            
+            $result = $qb->getQuery()->getResult();
+            return $result;
+    }
 
 }
 
