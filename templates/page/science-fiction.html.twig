@@ -69,11 +69,11 @@
                         <div class="container-biblio">
                             <section class='tabs-content'>
                                 <article id='tabs-1'>
-                                    <div class="row align-items-center">
+                                    <div class="row">
                                         {% for livresf in livresfs %}
                                         <div class="col-4">
                                             <div class="tab-item">
-                                                <img src={{ livresf.image }} width="150px" height="220px" alt="">
+                                                <a href="{{ path('app_page_science-fiction_show', {'id': livresf.id}) }}"><img src={{ livresf.image }} width="150px" height="220px" alt=""></a>
                                                     <h4>{{ livresf.titre }}</h4>
                                                     <h5>{{ livresf.auteur }}</h5>
                                                     <p>{{ livresf.description }}</p>

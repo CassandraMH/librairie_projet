@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Le comptoir de Renard
+{% endblock %}
+
+{% block stylesheets %} 
+
+        {{ parent() }}       
+        
+            <!-- Principale CSS de la page -->
+            <link rel="stylesheet" href="{{ asset('assets/css/pagefantasy.css') }}">
+
+            <!-- CSS secondaire de la page -->
+            <link rel="stylesheet" href="{{ asset('assets/css/owl-carousel.css') }}">
+            
+            <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css') }}">
+
+{% endblock %}
+
+{% block body %}
+    <!-- End Navbar -->
+     <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-lg-10">
+                <div class="hidden-xs">                                            
+                    <div class="fiche-breadcrumb-title">Notre Nouveauté du mois de juin n° {{ livrecinemas.id }} en cinema</div>
+                    <br>
+                </div>
+            </div>
+            <div class="row justify-content-around" itemscope="" itemtype="http://schema.org/Book">
+                <div class="col-4">
+                    <div class="couverture" data-ean="9782246827184" data-id="0-7019262">
+                        <picture>
+                            <img src="{{ livrecinemas.image }}" width="325px" height="500px"  class="couverture" itemprop="image" alt="">
+                        </picture>
+                    </div>
+                    <br>
+                </div>
+            <div class="col-8">
+                <div class="livre-container">
+                    <h2 class="text-mulit-light text-black" itemprop="name">{{ livrecinemas.titre }}</h2>
+                        <h5 class="text-mulit-bold text-black">de
+                            <i><span itemprop="author">{{ livrecinemas.auteur }}</span></i>                                   
+                        </h5>
+                        <br><h6> {{ livrecinemas.genrelitteraire }} </h6>
+                        <br><p class=" text-mulit-light">
+                                <p class="public text-gray">
+                                    <i>Prix de l'ouvrage</i> : {{ livrecinemas.prix }}€00
+                                </p>
+                                <p class="public text-gray">
+                                    <i>Type de public</i> : Tout public
+                                </p>
+                                    
+                    <div class="row mb-5 mt-30">
+                        <div class="col">
+                            <br><a href="#" rel="nofollow" class="btn-login-review text-mulit-light text-orange"><i class="fa fa-star" aria-hidden="true"></i> Donner votre avis sur ce livre</a>
+                        </div>
+                        <div class="col">
+                            <br><span class="text-mulit-light text-orange"><a href="#" rel="nofollow" class="btn-login-wish-list text-orange"><i class="fa fa-plus" aria-hidden="true"></i> Ajouter à votre liste d'envie</a></span>
+                        </div>
+                    </div>
+                    <hr class="mt-0">
+                        <div class="row mb-20">
+                            <div id="4couv" class="col-xs-12"><h4 class="text-mulit-light text-orange">La Quatrième de couverture</h4><p>
+                                <br><i><b>{{ livrecinemas.titre }}</b></i>
+                                </p>
+                                <br><p>{{ livrecinemas.description }}</p></div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="row justify-content-center">
+            <button type="button" class="btn btn-light btn-lg"><a href="{{ path('app_page_cinema') }}">Retour à la page</button>
+        </div>
+    </div>
+
+{% endblock %}

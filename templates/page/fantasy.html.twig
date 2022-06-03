@@ -69,11 +69,11 @@
                         <div class="container-biblio">
                             <section class='tabs-content'>
                                 <article id='tabs-1'>
-                                    <div class="row align-items-center">
+                                    <div class="row">
                                         {% for livrefantasy in livrefantasys %}
                                         <div class="col-4">
                                             <div class="tab-item">
-                                                <img src={{ livrefantasy.image }} width="150px" height="220px" alt="">
+                                                <a href="{{ path('app_page_fantasy_show', {'id': livrefantasy.id}) }}"><img src={{ livrefantasy.image }} width="150px" height="220px" alt=""></a>
                                                     <h4>{{ livrefantasy.titre }}</h4>
                                                     <h5>{{ livrefantasy.auteur }}</h5>
                                                     <p>{{ livrefantasy.description }}</p>
