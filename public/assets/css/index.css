@@ -15,6 +15,16 @@ figure, header, nav, section, article, aside, footer, figcaption {
   outline: 0;
 }
 
+.fa-brands{
+  line-height: 2;
+}
+
+#librairie .right-content .thumb a .fa{
+  line-height: 4;
+}
+#equipe .chef-item .thumb ul.social-icons li a .fa-brands {
+  line-height: 2.5;
+}
 .clearfix:after {
   content: ".";
   display: block;

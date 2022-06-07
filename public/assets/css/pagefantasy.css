@@ -15,6 +15,52 @@ figure, header, nav, section, article, aside, footer, figcaption {
   outline: 0;
 }
 
+.container-knp{
+  padding-top: 50px;
+}
+
+.container-searchbar{
+  padding-top: 50px;
+}
+
+.container-biblio{
+  padding-top: 50px;
+
+}
+
+.container .hidden-xs {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.container .hidden-xs .fiche-breadcrumb-title{
+  position: relative;
+  font-size: 15px;
+  color: #fb5849;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.container-searchbar .text-center .section h6{
+  position: relative;
+  text-align: center;
+  font-size: 15px;
+  color: #fb5849;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.livre-container{
+  padding-left: 80px;
+}
+
+.fa-brands{
+  line-height: 2;
+}
+
 .clearfix:after {
   content: ".";
   display: block;
@@ -142,7 +188,7 @@ body {
   opacity: 0.9;
 }
 
-.section-heading h6 {
+.section h6 {
   font-size: 15px;
   color: #fb5849;
   font-weight: 500;
@@ -150,14 +196,13 @@ body {
   text-transform: uppercase;
 }
 
-.section-heading h6:before {
+.section h6:before {
   width: 30px;
   height: 1px;
   content: '';
   position: absolute;
   left: 0;
   top: 8px;
-  background-color: #fb5849;
 }
 
 .section-heading h2 {
