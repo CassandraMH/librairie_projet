@@ -27,7 +27,7 @@ class AuteurController extends AbstractController
              $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
              10 // Nombre de résultats par page
          );
- 
+
         return $this->render('auteur/index.html.twig', [
             'auteurs' => $auteurs,
         ]);

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Entity\Pagesearch;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\LivreRepository;
 
@@ -30,10 +31,14 @@ class Livre
     #[ORM\JoinColumn(nullable: false)]
     private $genrelitteraire;
 
-    #[ORM\ManyToOne(targetEntity: Auteur::class, inversedBy: 'auteurliaison')]
-    #[ORM\JoinColumn(nullable: true)]
+    #[ORM\ManyToOne(targetEntity: Auteur::class, inversedBy: 'livres')]
     private $auteur;
 
+
+
+    public function __toString(){
+        return $this->titre;
+    }
 
     public function getId(): ?int
     {
@@ -111,4 +116,6 @@ class Livre
 
         return $this;
     }
+
+
 }

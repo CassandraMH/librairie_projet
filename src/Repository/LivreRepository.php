@@ -2,13 +2,14 @@
 
 namespace App\Repository;
 
-use App\Entity\Genrelitteraire;
+use App\Data\Search;
 use App\Entity\Livre;
-use App\Entity\Pagesearch;
 use Doctrine\ORM\ORMException;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Knp\Component\Pager\Pagination\PaginationInterface;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @extends ServiceEntityRepository<Livre>
@@ -20,10 +21,15 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
  */
 class LivreRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    private PaginatorInterface $paginator;
+
+    public function __construct(ManagerRegistry $registry, PaginatorInterface $paginator)
     {
         parent::__construct($registry, Livre::class);
+        $this->paginator = $paginator;
     }
+
+
 
     /**
      * @throws ORMException
@@ -52,53 +58,61 @@ class LivreRepository extends ServiceEntityRepository
     // /**
     //  * @return Livre[] Returns an array of Livre objects
     //  */
-    
-    public function findByLivreFantasy($id = 1)
+
+
+
+    /**
+     * @param Search $search
+     * @return Livre[]
+     */
+
+    public function findwithSubmit(Search $search): array
     {
-        return $this->createQueryBuilder('l')
-            ->andWhere('l.genrelitteraire = :val')
-            ->setParameter('val', $id)
-            ->orderBy('l.id', 'ASC')
-            ->setMaxResults(20)
-            ->getQuery()
-            ->getResult()
-        ;
+        $query = $this
+            ->createQueryBuilder('p')
+            ->select('c', 'p')
+            ->join('p.auteur', 'c');
+        if (!empty($search->lola)){
+            $query = $query
+                ->andWhere('c.nometprenom LIKE :string')
+                ->setParameter('string', "%{$search->lola}%");
+        }
+
+        return $query->getQuery()->getResult();
+
+
     }
 
-    public function findByLivreFantastique($id = 2)
+    /**
+     * Récupère les produits en lien avec la recherche
+     * @param Search $search
+     * @return PaginationInterface
+     */
+    public function findSearch(Search $search): PaginationInterface
     {
-        return $this->createQueryBuilder('l')
-            ->andWhere('l.genrelitteraire = :val')
-            ->setParameter('val', $id)
-            ->orderBy('l.id', 'ASC')
-            ->setMaxResults(20)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
+        $query = $this
+            ->createQueryBuilder('p')
+            ->select('c', 'p')
+            ->join('p.genrelitteraire', 'c');
 
-    public function findByLivreCinema($id = 3)
-    {
-        return $this->createQueryBuilder('l')
-            ->andWhere('l.genrelitteraire = :val')
-            ->setParameter('val', $id)
-            ->orderBy('l.id', 'ASC')
-            ->setMaxResults(20)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
+        if (!empty($search->recherche)){
+            $query = $query
+                ->andWhere('p.titre LIKE :recherche')
+                ->setParameter('recherche', "%{$search->recherche}%");
+        }
 
-    public function findByLivreSF($id = 4)
-    {
-        return $this->createQueryBuilder('l')
-            ->andWhere('l.genrelitteraire = :val')
-            ->setParameter('val', $id)
-            ->orderBy('l.id', 'ASC')
-            ->setMaxResults(20)
-            ->getQuery()
-            ->getResult()
-        ;
+        if (!empty($search->genrelitteraire)){
+            $query = $query
+                ->andWhere('c.id IN (:genrelitteraire)')
+                ->setParameter('genrelitteraire', $search->genrelitteraire);
+        }
+
+        $query->getQuery()->getResult();
+        return $this->paginator->paginate(
+            $query,
+            $search->page,
+            15,
+        );
     }
 
 }

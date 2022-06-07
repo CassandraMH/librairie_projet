@@ -33,13 +33,12 @@ class LivreController extends AbstractController
 
         return $this->render('livre/index.html.twig', [
             'livres' => $livres,
-
         ]);
     }
 
     #[Route('/new', name: 'app_livre_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ManagerRegistry $managerRegistry): Response
-    { 
+    {
         $entityManager = $managerRegistry->getManager();
 
         $livre = new Livre();
