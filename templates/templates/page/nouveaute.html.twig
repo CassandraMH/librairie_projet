@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Le comptoir de Renard
+{% endblock %}
+
+{% block stylesheets %}
+
+        {{ parent() }}
+
+            <!-- Principale CSS de la page -->
+            <link rel="stylesheet" href="{{ asset('assets/css/pagefantasy.css') }}">
+
+            <!-- CSS secondaire de la page -->
+            <link rel="stylesheet" href="{{ asset('assets/css/owl-carousel.css') }}">
+
+            <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css') }}">
+
+{% endblock %}
+
+{% block body %}
+
+    <!-- ***** Barre de recherche Starts ***** -->
+<section class="section" id="coupcoeur">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4 text-center">
+                    <div class="section-heading">
+                        <h6>Nos nouveautés du mois de Juin en rayon</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" id="tabs">
+                        <div class="col-lg-12">
+                            <div class="heading-tabs">
+                                <div class="row">
+                                    <div class="col-lg-6 offset-lg-3">
+                                        <ul>
+                                          <li><a href='#tabs-1'><img src="/assets/images/fantasy/tab-icon-01.png" alt="">Fantasy</a></li>
+                                          <li><a href='#tabs-1'><img src="/assets/images/fantastique/tab-icon-02.png" alt="">Fantastique</a></li>
+                                          <li><a href='#tabs-1'><img src="/assets/images/science-fiction/tab-icon-01.png" alt="">Science-Fiction</a></li>
+                                          <li><a href='#tabs-1'><img src="/assets/images/cinema/tab-icon-01.png" alt="">Cinéma</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-searchbar">
+                            <div class="text-center">
+                                <div class="section">
+                                    <h6>Une recherche ?</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            {{ form_start (form)}}
+                                    {{form_row (form.recherche) }}
+
+                                    <div class="col-md-6">
+                                        {{form_row (form.genrelitteraire) }}
+                                    </div>
+
+                            <button type="submit" class="btn btn-danger w-100">Recherche</button>
+
+                            {{ form_end (form)}}
+                        </div>
+
+    <!-- ***** End Barre de recherche ***** -->
+
+
+                    <!-- PARTIE : FANTASY -->
+
+                        <div class="container-biblio">
+                            <section class='tabs-content'>
+                                <article id='tabs-1'>
+                                    <div class="row">
+                                        {% for livrenouveaute in livrenouveautes %}
+                                        <div class="col-4">
+                                            <div class="tab-item">
+                                                <a href="{{ path('app_page_nouveaute_show', {'id': livrenouveaute.id}) }}"><img src={{ livrenouveaute.image }} width="150px" height="220px" alt=""></a>
+                                                    <h4>{{ livrenouveaute.titre }}</h4>
+                                                    <h5>{{ livrenouveaute.auteur }}</h5>
+                                                    <p>{{ livrenouveaute.description }}</p>
+                                                        <div class="price">
+                                                            <h6>📚 : {{ livrenouveaute.prix }}€00</h6>
+                                                        </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                </article>
+
+                                <div class="container-knp">
+                                    <div class="row justify-content-center">
+                                        <div class="col-4">
+                                            {{ knp_pagination_render(livrenouveautes)}}
+                                        </div>                            
+                                    </div>
+                                </div>
+
+                            </section>
+                        </div>
+                    </div>
+                </section>
+
+{% endblock %}
+

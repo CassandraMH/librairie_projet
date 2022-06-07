@@ -1,0 +1,676 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Le comptoir de Renard
+{% endblock %}
+
+{% block stylesheets %} 
+
+        {{ parent() }}       
+        
+            <!-- Principale CSS de la page -->
+            <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
+
+{% endblock %}
+
+{% block body %} 
+
+    <!-- ***** About Area Starts ***** -->
+    <section class="section" id="librairie">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>Notre histoire</h6>
+                            <h2>Une aventure dès l'entrée dans la librairie </h2>
+                        </div>
+                        <p>La librairie : "Le comptoir de renard", spécialisée fantasy et cinéma est née en plein cœur de la ville d'Epinal, d'un petit groupe d'amies. À la croisée des mondes et des univers, on peut y retrouver des conseils clients, des livres rares, mais également des découvertes. <br><br>Ouverte en 2021, la librairie fait le bonheur des clients. Elle les accueille du lundi après-midi au samedi soir.</p>
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="assets/images/about-thumb-01.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img src="assets/images/about-thumb-02.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img src="assets/images/about-thumb-03.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="right-content">
+                        <div class="thumb">
+                            <a rel="nofollow" href="http://youtube.com"><i class="fa fa-play"></i></a>
+                            <img src="assets/images/about-video-bg.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** About Area Ends ***** -->
+
+    <!-- ***** Menu Area Starts ***** -->
+    <section class="section" id="nouveautes">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="section-heading">
+                        <h6>Nos nouveautés</h6>
+                        <h2>Mois de juin</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item-carousel">
+            <div class="col-lg-12">
+                <div class="owl-menu-item owl-carousel">
+                    <div class="item">
+                        <div class='card card1'>
+                            <div class="price"><h6>24€50</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Les épreuves de Koli</h1>
+                              <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                              <div class="main-text-button">
+                                  <div class="scroll-to-section"><a href="#contact">Pour le réserver <i class="fa fa-angle-down"></i></a></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card2'>
+                            <div class="price"><h6>25€</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>L'Alliance de Fer</h1>
+                              <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                              <div class="main-text-button">
+                                  <div class="scroll-to-section"><a href="#contact">Pour le réserver <i class="fa fa-angle-down"></i></a></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card3'>
+                            <div class="price"><h6>24€90</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Le Chant des géants</h1>
+                              <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                              <div class="main-text-button">
+                                  <div class="scroll-to-section"><a href="#contact">Pour le réserver <i class="fa fa-angle-down"></i></a></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card4'>
+                            <div class="price"><h6>22€95</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>La grande histoire 7éme art</h1>
+                              <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                              <div class="main-text-button">
+                                  <div class="scroll-to-section"><a href="#contact">Pour le réserver <i class="fa fa-angle-down"></i></a></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card5'>
+                            <div class="price"><h6>30€</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Camera Obscura</h1>
+                              <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                              <div class="main-text-button">
+                                  <div class="scroll-to-section"><a href="#contact">Pour le réserver <i class="fa fa-angle-down"></i></a></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card6'>
+                            <div class="price"><h6>35€</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Living Forest</h1>
+                              <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                              <div class="main-text-button">
+                                  <div class="scroll-to-section"><a href="#contact">Pour le réserver <i class="fa fa-angle-down"></i></a></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Menu Area Ends ***** -->
+
+    <!-- ***** Chefs Area Starts ***** -->
+    <section class="section" id="equipe">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4 text-center">
+                    <div class="section-heading">
+                        <h6>Notre équipe de choc</h6>
+                        <h2>N'hésitez pas à venir vers eux!</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="chef-item">
+                        <div class="thumb">
+                            <div class="overlay"></div>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                            <img src="assets/images/chefs-01.jpg" alt="Chef #1">
+                        </div>
+                        <div class="down-content">
+                            <h4>Logan</h4>
+                            <span>Fin connaisseur du cinéma</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="chef-item">
+                        <div class="thumb">
+                            <div class="overlay"></div>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                            <img src="assets/images/chefs-02.jpg" alt="Chef #2">
+                        </div>
+                        <div class="down-content">
+                            <h4>Lola</h4>
+                            <span>Aventureuse du l'espace temps</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="chef-item">
+                        <div class="thumb">
+                            <div class="overlay"></div>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                            <img src="assets/images/chefs-03.jpg" alt="Chef #3">
+                        </div>
+                        <div class="down-content">
+                            <h4>Peter</h4>
+                            <span>Joueur des temps mordernes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Chefs Area Ends ***** -->
+
+     <!-- ***** Menu Area Starts ***** -->
+     <section class="section" id="rencontre">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="section-heading">
+                        <h6>Nos rencontres auteurs</h6>
+                        <h2>Pour le mois de Juin</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item-carousel">
+            <div class="col-lg-12">
+                <div class="owl-menu-item owl-carousel">
+                    <div class="item">
+                        <div class='card card7'>
+                            <div class="price"><h6>4</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Estelle Faye</h1>
+                              <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                              <div class="main-text-button">
+                                  <div class="scroll-to-section"><a href="#contact">Pour réserver la rencontre <i class="fa fa-angle-down"></i></a></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card8'>
+                            <div class="price"><h6>8</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Gastrogeek</h1>
+                              <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                              <div class="main-text-button">
+                                  <div class="scroll-to-section"><a href="#contact">Pour réserver la rencontre <i class="fa fa-angle-down"></i></a></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card9'>
+                            <div class="price"><h6>11</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Emmanuelle Chastellière</h1>
+                              <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                              <div class="main-text-button">
+                                  <div class="scroll-to-section"><a href="#contact">Pour réserver la rencontre <i class="fa fa-angle-down"></i></a></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card10'>
+                            <div class="price"><h6>15</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Michel Bussi</h1>
+                              <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                              <div class="main-text-button">
+                                  <div class="scroll-to-section"><a href="#contact">Pour réserver la rencontre <i class="fa fa-angle-down"></i></a></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card11'>
+                            <div class="price"><h6>22</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Victor Bonnefoy</h1>
+                              <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                              <div class="main-text-button">
+                                  <div class="scroll-to-section"><a href="#contact">Pour réserver la rencontre <i class="fa fa-angle-down"></i></a></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card12'>
+                            <div class="price"><h6>29</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>François Theurel</h1>
+                              <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                              <div class="main-text-button">
+                                  <div class="scroll-to-section"><a href="#contact">Pour réserver la rencontre <i class="fa fa-angle-down"></i></a></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Menu Area Ends ***** -->
+
+    <!-- ***** Reservation Us Area Starts ***** -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>Nous contacter</h6>
+                            <h2>Une question ?</h2>
+                        </div>
+                        <p>N'hésitez pas à nous contacter pour toutes demandes ou question particulière.</p>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="phone">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <h4>Horaire : </h4>
+                                    <span>Lundi : 14h à 18h</span>
+                                    <br><span>Mardi au Vendredi :<br> 9h30 à 12h - 14h à 19h</span>
+                                    <br><span>Samedi :<br> 10h à 12h - 14h à 19h30</span>
+                                    <h4>Adresse : </h4>
+                                    <span>15 rue des Taneurs</span>
+                                    <br><span>88000 Epinal</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="message">
+                                    <i class="fa-solid fa-address-book"></i>
+                                    <h4>E-mail</h4>
+                                    <span><a href="mailto:lecomptoirderenard@outlook.fr">lecomptoirderenard@outlook.fr</a></span>
+                                    <h4>Téléphone : </h4>
+                                    <span><a href="tel:+33989250533">03.89.25.05.33</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form id="contact" action="" method="post">
+                          <div class="row">
+                            <div class="col-lg-12">
+                                <div class="color">
+                                    <h4 class="color">Pour faire une réservation ?</h4>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                              <fieldset>
+                                <input name="name" type="text" id="name" placeholder="Votre nom*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                              <fieldset>
+                              <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Votre email*" required="">
+                            </fieldset>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                              <fieldset>
+                                <input name="phone" type="text" id="phone" placeholder="Numéro de téléphone*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <select value="time" name="time" id="time">
+                                    <option value="time">Réservation</option>
+                                    <option name="Rencontre" id="Breakfast">Rencontre auteur</option>
+                                    <option name="Jeux" id="Lunch">Soirée jeux</option>
+                                    <option name="Ateliers" id="Dinner">Ateliers</option>
+                                </select>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <textarea name="message" rows="6" id="message" placeholder="Message" required=""></textarea>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-button-icon">Valider</button>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Reservation Area Ends ***** -->
+
+    <!-- ***** Menu Area Starts ***** -->
+    <section class="section" id="coupcoeur">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4 text-center">
+                    <div class="section-heading">
+                        <h6>Nos coups de coeur</h6>
+                        <h2>Pour le mois de Juin</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" id="tabs">
+                        <div class="col-lg-12">
+                            <div class="heading-tabs">
+                                <div class="row">
+                                    <div class="col-lg-6 offset-lg-3">
+                                        <ul>
+                                          <li><a href='#tabs-1'><img src="assets/images/tab-icon-01.png" alt="">Fantasy</a></li>
+                                          <li><a href='#tabs-2'><img src="assets/images/tab-icon-02.png" alt="">Cinéma</a></a></li>
+                                          <li><a href='#tabs-3'><img src="assets/images/tab-icon-03.png" alt="">Jeux</a></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <section class='tabs-content'>
+                                <article id='tabs-1'>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="left-list">
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-01.jpg" alt="">
+                                                            <h4>Les dieux sauvages - Tome 1</h4>
+                                                            <h5>Lionel Davoust</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>25€</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-02.jpg" alt="">
+                                                            <h4>Le Chant des géants</h4>
+                                                            <h5>David Bry</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>24€90</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-03.jpg" alt="">
+                                                            <h4>Les sorcières du clan Nord</h4>
+                                                            <h5>Irena Brignull</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>17€50</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="right-list">
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-04.jpg" alt="">
+                                                            <h4>Célestopol - 1992</h4>
+                                                            <h5>Emmanuel Chastellière</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>21€90</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-05.jpg" alt="">
+                                                            <h4>Le seigneur des anneaux</h4>
+                                                            <h5>J. R. R. Tolkien</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>8€95</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-06.jpg" alt="">
+                                                            <h4>L'héritière des Raeven</h4>
+                                                            <h5>Méropé Malo</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>16€90</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>  
+                                <article id='tabs-2'>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="left-list">
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-07.jpg" alt="">
+                                                            <h4>Camera Obscura</h4>
+                                                            <h5>François Theurel</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>30€00</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-08.jpg" alt="">
+                                                            <h4>100 films, 100 histoires</h4>
+                                                            <h5>Jean-Baptiste Toussaint</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>19€95</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-09.jpg" alt="">
+                                                            <h4>Pardon le cinéma</h4>
+                                                            <h5>Victor Bonnefoy</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>24€90</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="right-list">
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-10.jpg" alt="">
+                                                            <h4>Le manuel de survie</h4>
+                                                            <h5>Ludoc</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>29€90</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-11.jpg" alt="">
+                                                            <h4>Les dossiers du Coroner</h4>
+                                                            <h5>Mike Zonnenberg</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>24€95</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-12.jpg" alt="">
+                                                            <h4>Star Wars Cantina</h4>
+                                                            <h5>Thibault Villanova</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>25€00</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>  
+                                <article id='tabs-3'>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="left-list">
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-13.jpg" alt="">
+                                                            <h4>Mysterium</h4>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>35€99</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-14.jpg" alt="">
+                                                            <h4>Unlock !</h4>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>29€95</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-15.jpg" alt="">
+                                                            <h4>Dixit</h4>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>29€99</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="right-list">
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-16.jpg" alt="">
+                                                            <h4>7 Wonders</h4>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>39€95</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-17.png" alt="">
+                                                            <h4>Les aventures du Rail</h4>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>42€95</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="assets/images/tab-item-18.jpg" alt="">
+                                                            <h4>La légende des cerisiers</h4>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                            <div class="price">
+                                                                <h6>24€78</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>   
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Chefs Area Ends ***** --> 
+
+{% endblock %}
+
+
+
+
+
+
